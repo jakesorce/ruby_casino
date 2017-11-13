@@ -6,7 +6,7 @@ class Casino
 
   def initialize
     puts 'Welcome to the ruby casino!'
-    @player = Player.new 
+    @player = Player.new
   end
 end
 
