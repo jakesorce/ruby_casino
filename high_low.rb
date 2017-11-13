@@ -22,3 +22,6 @@ class HighLow
     #TODO Flip cards
   end
 end
+
+# player = Player.new
+# HighLow.new(player)
