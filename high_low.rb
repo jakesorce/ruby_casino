@@ -1,9 +1,9 @@
 class HighLow
-  attr_accessor :player, :casino
+  attr_accessor :player
 
-  def initialize(player, casino)
+  def initialize(player)
     @player = player
-    @casino = casino
+    puts "Welcome to High Low: #{player.name}"
     menu
   end
 
@@ -13,16 +13,11 @@ class HighLow
     choice = gets.to_i
     if choice == 1
       place_bet
-    elsif choice == 2
-      @casino.menu
-    else
-      puts "Invalid choice.  Try again"
-      menu
     end
   end
 
   def place_bet
-    puts "How much do you want to bet? ($#{@player.wallet})"
+    puts "How much do you want to bet? ($#{@player.wallet.amount})"
     amount = gets.to_f
     #TODO Flip cards
   end

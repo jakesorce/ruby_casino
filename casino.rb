@@ -3,13 +3,12 @@ require_relative 'player'
 require_relative 'high_low'
 
 class Casino
-  @options = ["High / Low", "Exit"]
-
-  attr_accessor :player
+  attr_accessor :player, :options
 
   def initialize
     puts 'Welcome to the ruby casino!'
     @player = Player.new
+    @options = ["High / Low", "Exit"]
     menu
   end
 
@@ -18,18 +17,15 @@ class Casino
     choice = gets.to_i - 1
     case choice
       when 0
-        HighLow.new(@player, self)
+        HighLow.new(@player)
       when 1
         puts "Come again!"
         exit
       else
         puts "Invalid Choice"
-        menu
     end
-    
+    menu
   end
 end
 
 Casino.new
-
-
